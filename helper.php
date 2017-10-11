@@ -18,22 +18,26 @@ defined('_JEXEC') or die;
  */
 class ModEtdArticleHelper {
 
+    public static function getArticle(&$params) {
 
-    public static function getArticle(&$params)
-    {
         $id = $params->get('id');
-        if(isset($id) && $id!= null)
-        // Get the dbo
-        $db = JFactory::getDbo();
-        $query = $db->getQuery(true);
-        $query->select('*')
-              ->from('#__content AS c')
-              ->where('c.id = ' . $id);
 
-        $db->setQuery($query);
-        $result = $db->loadObject();
+        if (!empty($id)) {
 
-        return $result;
+            $db    = JFactory::getDbo();
+            $query = $db->getQuery(true);
+
+            $query->select('a.id, a.title, a.introtext, ' . $query->length('a.fulltext') . ' AS readmore')
+                  ->from('#__content AS a')
+                  ->where('a.id = ' . $id);
+
+            $db->setQuery($query);
+            return $db->loadObject();
+
+
+        }
+
+        return false;
     }
 
 }
