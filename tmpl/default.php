@@ -14,7 +14,7 @@ $component_params = JComponentHelper::getParams('com_content');
 $params->set('access-view', true);
 $params->set('readmore_limit', $component_params->get('readmore_limit', 100));
 
-if ($result) :
+if ($result && $result->state == "1") :
 ?>
 <div class="mod-etd-article<?php if (!empty($moduleclass_sfx)) : echo $moduleclass_sfx; endif; ?>">
 <?php if ($params->get('show_article_title')) : ?>

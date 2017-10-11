@@ -27,7 +27,7 @@ class ModEtdArticleHelper {
             $db    = JFactory::getDbo();
             $query = $db->getQuery(true);
 
-            $query->select('a.id, a.alias, a.title, a.introtext, a.catid, a.language, ' . $query->length('a.fulltext') . ' AS readmore')
+            $query->select('a.id, a.alias, a.state, a.title, a.introtext, a.catid, a.language, ' . $query->length('a.fulltext') . ' AS readmore')
                   ->from('#__content AS a')
                   ->where('a.id = ' . $id);
 
