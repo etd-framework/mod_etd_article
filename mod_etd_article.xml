@@ -27,7 +27,7 @@
         <fields name="params">
 
             <!-- Basic options. -->
-            <fieldset name="options" label="MOD_ETD_ARTICLE_ATTRIBS_ARTICLE_SETTINGS_LABEL" addfieldpath="/administrator/components/com_content/models/fields">
+            <fieldset name="basic" label="MOD_ETD_ARTICLE_ATTRIBS_ARTICLE_SETTINGS_LABEL" addfieldpath="/administrator/components/com_content/models/fields">
 
                 <field name="id" type="modal_article"
                        label="MOD_ETD_ARTICLE_FIELD_SELECT_ARTICLE_LABEL"
