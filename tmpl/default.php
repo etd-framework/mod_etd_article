@@ -15,7 +15,7 @@ $params->set('access-view', true);
 $params->set('readmore_limit', $component_params->get('readmore_limit', 100));
 
 ?>
-<div class="mod-etd-article<?php if (!empty($moduleclass_sfx)) : echo htmlspecialchars($moduleclass_sfx, ENT_QUOTES, "UTF-8") endif; ?>">
+<div class="mod-etd-article<?php if (!empty($moduleclass_sfx)) : echo htmlspecialchars($moduleclass_sfx, ENT_QUOTES, "UTF-8"); endif; ?>">
 <?php if ($params->get('show_article_title')) : ?>
     <h3><?php echo htmlspecialchars($result->title, ENT_QUOTES, "UTF-8") ?></h3>
 <?php endif; ?>
