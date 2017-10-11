@@ -14,8 +14,9 @@ $component_params = JComponentHelper::getParams('com_content');
 $params->set('access-view', true);
 $params->set('readmore_limit', $component_params->get('readmore_limit', 100));
 
+if ($result) :
 ?>
-<div class="mod-etd-article<?php if (!empty($moduleclass_sfx)) : echo htmlspecialchars($moduleclass_sfx, ENT_QUOTES, "UTF-8"); endif; ?>">
+<div class="mod-etd-article<?php if (!empty($moduleclass_sfx)) : echo $moduleclass_sfx; endif; ?>">
 <?php if ($params->get('show_article_title')) : ?>
     <h3><?php echo htmlspecialchars($result->title, ENT_QUOTES, "UTF-8") ?></h3>
 <?php endif; ?>
@@ -27,3 +28,4 @@ $params->set('readmore_limit', $component_params->get('readmore_limit', 100));
     echo JLayoutHelper::render('joomla.content.readmore', array('item' => $result, 'params' => $params, 'link' => $link));
 endif; ?>
 </div>
+<?php endif; ?>

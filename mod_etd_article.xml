@@ -27,9 +27,7 @@
         <fields name="params">
 
             <!-- Basic options. -->
-            <fieldset name="basic"
-                      label="MOD_ETD_ARTICLE_ATTRIBS_ARTICLE_SETTINGS_LABEL"
-                      addfieldpath="/administrator/components/com_content/models/fields">
+            <fieldset name="options" label="MOD_ETD_ARTICLE_ATTRIBS_ARTICLE_SETTINGS_LABEL" addfieldpath="/administrator/components/com_content/models/fields">
 
                 <field name="id" type="modal_article"
                        label="MOD_ETD_ARTICLE_FIELD_SELECT_ARTICLE_LABEL"
@@ -87,6 +85,66 @@
                     <option value="1">JSHOW</option>
                 </field>
 
+            </fieldset>
+            <fieldset name="advanced">
+
+                <field
+                        name="prepare_content"
+                        type="radio"
+                        label="MOD_ETD_ARTICLE_FIELD_PREPARE_CONTENT_LABEL"
+                        description="MOD_ETD_ARTICLE_FIELD_PREPARE_CONTENT_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="seo_etd"
+                        type="radio"
+                        label="MOD_ETD_ARTICLE_FIELD_SEO_ETD_LABEL"
+                        description="MOD_ETD_ARTICLE_FIELD_SEO_ETD_DESC"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="layout"
+                        type="modulelayout"
+                        label="JFIELD_ALT_LAYOUT_LABEL"
+                        description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+                />
+
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                        rows="3"
+                />
+
+                <field
+                        name="cache"
+                        type="list"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="COM_MODULES_FIELD_CACHING_DESC"
+                        default="1"
+                >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                        name="cache_time"
+                        type="text"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+                        default="900"
+                />
             </fieldset>
         </fields>
     </config>
