@@ -9,6 +9,8 @@
 
 defined('_JEXEC') or die;
 
+JLoader::register('ContentHelperRoute', JPATH_SITE . '/components/com_content/helpers/route.php');
+
 /**
  * Helper for mod_etd_article
  *
@@ -27,7 +29,7 @@ class ModEtdArticleHelper {
             $db    = JFactory::getDbo();
             $query = $db->getQuery(true);
 
-            $query->select('a.id, a.alias, a.state, a.title, a.introtext, a.catid, a.language, ' . $query->length('a.fulltext') . ' AS readmore')
+            $query->select('a.id, a.alias, a.title, a.introtext, a.catid, a.language, ' . $query->length('a.fulltext') . ' AS readmore')
                   ->from('#__content AS a')
                   ->where('a.id = ' . $id);
 
