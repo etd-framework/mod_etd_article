@@ -34,7 +34,10 @@ if ($result) :
                 src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>" itemprop="image"></div>
 <?php endif; ?>
 <?php if ($params->get('show_readmore') && $result->readmore) : ?>
-    <?php $direction = JFactory::getLanguage()->isRtl() ? 'left' : 'right'; ?>
+    <?php
+        $direction = JFactory::getLanguage()->isRtl() ? 'left' : 'right';
+        $link = JRoute::_(ContentHelperRoute::getArticleRoute($result->slug, $result->catid, $result->language));
+    ?>
     <p class="readmore">
     <?php if ($params->get('show_readmore_title', 0) == 0) : ?>
         <a class="btn" href="<?php echo $link; ?>" itemprop="url" aria-label="<?php echo JText::_('MOD_ETD_ARTICLE_READ_MORE'); ?> <?php echo htmlspecialchars($result->title, ENT_QUOTES, 'UTF-8'); ?>">
