@@ -85,6 +85,28 @@
                     <option value="1">JSHOW</option>
                 </field>
 
+                <field
+                        name="show_intro_image"
+                        type="list"
+                        label="MOD_ETD_ARTICLE_FIELD_SHOW_INTRO_IMAGE_LABEL"
+                        description="MOD_ETD_ARTICLE_FIELD_SHOW_INTRO_IMAGE_DESC"
+                        default="0"
+                >
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field
+                        name="show_fulltext_image"
+                        type="list"
+                        label="MOD_ETD_ARTICLE_FIELD_SHOW_FULLTEXT_IMAGE_LABEL"
+                        description="MOD_ETD_ARTICLE_FIELD_SHOW_FULLTEXT_IMAGE_DESC"
+                        default="0"
+                >
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
             </fieldset>
             <fieldset name="advanced">
 
